@@ -1,0 +1,117 @@
+body {
+  background-color: #0f1115;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+.lineThrough {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.filterBtn,
+.clearBtn {
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.filterBtn:hover {
+  background-color: wheat;
+  color: white;
+}
+
+.clearBtn:hover {
+  background-color: #ba181b;
+}
+
+.active {
+  background-color: wheat;
+  cursor: pointer;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+}
+
+.container {
+  margin: 100px auto;
+  border-radius: 10px;
+  border: 1px solid #edede9;
+  width: 30%;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+}
+.to-do-title {
+  color: #00ffc2;
+  text-align: center;
+}
+
+.input {
+  font-size: 1.1rem;
+  margin-left: 14px;
+  margin-right: 14px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #ffff;
+}
+form {
+  display: flex;
+  padding: 14px;
+  border-radius: 28px;
+  justify-content: space-between;
+  border: 1px solid #00ffc2;
+}
+
+form button {
+  border: none;
+  padding: 5px 14px;
+  border-radius: 28px;
+  cursor: pointer;
+  background-color: #00ffc2;
+  font-size: 1.1rem;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+li {
+  display: flex;
+  border: 1px solid #1c1d21;
+  border-radius: 20px;
+  padding: 5px;
+}
+input[type="checkbox"] {
+  align-items: center;
+  appearance: none;
+  border-radius: 50px;
+  border: 1px solid #00ffc2;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #00ffc2;
+}
+
+.deleteTask {
+  border: none;
+  background: transparent;
+  color: #4a4b4e;
+  font-size: 1.1rem;
+  cursor: pointer;
+  /* border: 1px solid red; */
+  width: min-content;
+}
+
+.filterButtons button,
+.clearBtn {
+  border-radius: 28px;
+  background-color: #00ffc2;
+}
