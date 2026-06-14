@@ -18,16 +18,16 @@ body {
 }
 
 .filterBtn:hover {
-  background-color: wheat;
+  background-color: #8ad6c4;
   color: white;
 }
 
 .clearBtn:hover {
-  background-color: #ba181b;
+  background-color: #f94144;
 }
 
 .active {
-  background-color: wheat;
+  background-color: #8ad6c4;
   cursor: pointer;
   border: none;
   padding: 5px 10px;
@@ -74,18 +74,29 @@ form button {
   font-size: 1.1rem;
 }
 
+.addTaskbtn:hover {
+  background-color: #8ad6c4;
+}
+
 ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-left: 0;
 }
 
+.task-name-stlyling {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 li {
   display: flex;
   border: 1px solid #1c1d21;
   border-radius: 20px;
   padding: 5px;
+  justify-content: space-between;
 }
 input[type="checkbox"] {
   align-items: center;
@@ -106,8 +117,6 @@ input[type="checkbox"]:checked {
   color: #4a4b4e;
   font-size: 1.1rem;
   cursor: pointer;
-  /* border: 1px solid red; */
-  width: min-content;
 }
 
 .filterButtons button,

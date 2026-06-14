@@ -67,20 +67,25 @@ function App() {
           className="input"
           placeholder="Add task..."
         />
-        <button type="submit">Add</button>
+        <button type="submit" className="addTaskbtn">
+          Add
+        </button>
       </form>
       <main>
         <ul>
           {visibleTodos.map((todo) => (
             <li key={todo.id}>
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={() => handleToggleTodo(todo.id)}
-              />
-              <span className={todo.completed ? "lineThrough" : ""}>
-                {todo.text}
-              </span>
+              <section className="task-name-stlyling">
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => handleToggleTodo(todo.id)}
+                />
+                <span className={todo.completed ? "lineThrough" : ""}>
+                  {todo.text}
+                </span>
+              </section>
+
               <button
                 className="deleteTask"
                 onClick={() => handleDeleteTodo(todo.id)}
