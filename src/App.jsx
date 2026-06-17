@@ -9,6 +9,16 @@ function App() {
       text: "Buy milk",
       completed: false,
     },
+    {
+      id: 2,
+      text: "Go swimming",
+      completed: false,
+    },
+    {
+      id: 3,
+      text: "Shopping",
+      completed: true,
+    },
   ]);
   const [newTask, setNewTask] = useState("");
   const [filter, setFilter] = useState("all");
@@ -16,6 +26,10 @@ function App() {
   const remainingTodos = todos.filter((todo) => !todo.completed).length;
 
   let visibleTodos = todos;
+
+  let completedTasks = todos.filter((todo) => todo.completed).length;
+
+  const [clearingCompleted, setClearingCompleted] = useState(false);
 
   if (filter === "active") {
     visibleTodos = todos.filter((todo) => !todo.completed);
@@ -53,7 +67,18 @@ function App() {
   }
 
   function handleClearCompleted() {
+    if (completedTasks >= 1) {
+      setClearingCompleted((prevState) => !clearingCompleted);
+    }
+  }
+
+  function handleYesCompleted() {
     setTodos((prevTodos) => prevTodos.filter((todo) => !todo.completed));
+    handleClearCompleted();
+  }
+
+  function handleNoAndReset() {
+    handleClearCompleted();
   }
 
   return (
@@ -122,9 +147,36 @@ function App() {
         </section>
       </main>
 
-      <button onClick={handleClearCompleted} className="clearBtn">
-        Clear completed tasks
-      </button>
+      {clearingCompleted ? (
+        <div className="displayClearingConfirmation">
+          <h3>
+            Are you sure you want to delete{" "}
+            {remainingTodos > 1 ? "these" : "this"} task?
+          </h3>
+
+          <input
+            type="submit"
+            name="yes"
+            value={"Yes"}
+            onClick={handleYesCompleted}
+          />
+
+          <input
+            type="submit"
+            name="no"
+            value={"No"}
+            onClick={handleNoAndReset}
+          />
+        </div>
+      ) : (
+        <button
+          onClick={handleClearCompleted}
+          className={"clearBtn"}
+          disabled={completedTasks >= 1 ? false : true}
+        >
+          Clear completed tasks
+        </button>
+      )}
     </div>
   );
 }
